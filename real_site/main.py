@@ -41,6 +41,11 @@ def scrape_product_info(url):
         except AttributeError:
             pass
 
+    with open(f'product_info.txt', 'a', encoding='utf-8') as file:
+        file.write(f'Produit: {produit}\n')
+        file.write(f'Prix: {prix}\n')
+        file.write(f'Description: {description}\n')
+        file.write('------------------------\n')
 
 if __name__ == "__main__":
 
