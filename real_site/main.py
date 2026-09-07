@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import time
 
 def scrape_product_info(url):
     html_content = requests.get(url).text
@@ -39,3 +40,13 @@ def scrape_product_info(url):
 
         except AttributeError:
             pass
+
+
+if __name__ == "__main__":
+
+    while True:
+        url = input("Enter the product URL: ")
+        scrape_product_info(url)
+        """
+        time.sleep(5)  # Wait for 5 seconds before the next iteration
+        """
