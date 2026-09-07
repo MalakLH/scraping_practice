@@ -15,4 +15,4 @@ with open('presentation.html', 'r', encoding='utf-8') as html_file:
 
     for h3_tag in h3_tags:
         h3_text = h3_tag.text.strip()[-1] # Use strip() to remove any leading/trailing whitespace and get the last word
-        print(h3_text) # Print the text content of each <h3> tag
+        print(f' Last letter of h3: {h3_text}') # Print the text content of each <h3> tag
