@@ -9,10 +9,17 @@ charts = soup.find_all('div', class_='row')
 for chart in charts:
 
     try:
-        produit = chart.find('div', class_="product-prices").text.replace(' ','').replace('\n','').replace('\t','')
-        print(produit)
+        produit = chart.find('h1').text.replace('  ','').replace('\n','')
+        print(f'Produit: {produit}')
 
     except AttributeError:
-        print("No product prices found in this chart.")
+        pass
 
+for chart in charts:
 
+    try:
+        prix = chart.find('div', class_="product-prices").text.replace('  ','').replace('\n','').replace('\t','')
+        print(f'Prix: {prix}')
+
+    except AttributeError:
+        pass
